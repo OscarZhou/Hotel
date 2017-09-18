@@ -18,7 +18,7 @@ namespace DAL
             string sql =
                 "SELECT PostId, PostName, PostPlace, RequireCount, PostType, EduBackground, PostDesc, PostRequire, Experience, PublishTime, Manager, PhoneNumber, Email FROM [dbo].[Recruitment]";
 
-            List<Recruitment> list = null;
+            List<Recruitment> list = new List<Recruitment>();
             SqlDataReader objReader = SQLHelper.GetReader(sql);
             while (objReader.Read())
             {
