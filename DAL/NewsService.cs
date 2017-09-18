@@ -127,12 +127,13 @@ namespace DAL
         public int ModifyNews(News objNews)
         {
             string sql =
-                "Update [dbo].[News] SET NewsTitle = @NewsTitle, NewsContents = @NewsContents, CategoryId = @CategoryId";
+                "Update [dbo].[News] SET NewsTitle = @NewsTitle, NewsContents = @NewsContents, CategoryId = @CategoryId WHERE NewsId = @NewsId";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@NewsTitle", objNews.NewsTitle),
                 new SqlParameter("@NewsContents", objNews.NewsContents),
-                new SqlParameter("@CategoryId", objNews.CategoryId) 
+                new SqlParameter("@CategoryId", objNews.CategoryId),
+                new SqlParameter("@NewsId", objNews.NewsId) 
             };
 
             int result = SQLHelper.Update(sql, param);
