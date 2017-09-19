@@ -3,6 +3,7 @@ using System;
 
 namespace Models
 {
+    [Serializable]
     public class DishBook
     {
         public int BookId { get; set; }

@@ -1,6 +1,9 @@
 ﻿
+using System;
+
 namespace Models
 {
+    [Serializable]
     public class SysAdmin
     {
         public int LoginId { get; set; }

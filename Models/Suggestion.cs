@@ -2,6 +2,7 @@
 
 namespace Models
 {
+    [Serializable ]
     public class Suggestion
     {
         public int SuggestionId { get; set; }

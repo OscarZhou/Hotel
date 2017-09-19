@@ -1,7 +1,10 @@
 ﻿
 
+using System;
+
 namespace Models
 {
+    [Serializable]
     public class Dish
     {
         public int DishId { get; set; }
@@ -11,6 +14,8 @@ namespace Models
         public double UnitPrice { get; set; }
 
         public int CategoryId { get; set; }
+
+        public string DishImage { get; set; }
 
         public string CategoryName { get; set; }
 

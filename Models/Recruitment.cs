@@ -3,6 +3,7 @@ using System;
 
 namespace Models
 {
+    [Serializable]
     public class Recruitment
     {
         public int PostId { get; set; }
