@@ -46,6 +46,8 @@
     <Compile Include="NewsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecruitmentService.cs" />
+    <Compile Include="SuggestionService.cs" />
+    <Compile Include="SysAdminService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
