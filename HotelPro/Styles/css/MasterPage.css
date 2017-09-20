@@ -1,0 +1,94 @@
+﻿body {
+    margin: 0px auto;
+    
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    width: 1000px;
+    height: 92px;
+    margin: 0px auto;
+}
+header > nav {
+    background-image: url(../../Images/navbg.jpg);
+    color: #ffffff;
+    margin-bottom: 0px;
+}
+
+header a {
+    color: #ffffff;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: small;
+}
+
+header > nav > div {
+    padding-top: 20px;
+}
+
+.clear {
+    overflow:hidden;
+    clear:both; 
+    width:0px; 
+    height:0px;
+}
+.banner {
+    margin:0 auto; 
+    text-align:center;
+    width: 1000px;
+    background-color: #FFB70C;
+}
+
+.banner ul {
+    padding:5px 0px; 
+    margin:0px;
+}
+
+.banner ul li {
+    list-style:none;
+    margin: 0px auto;
+}
+
+.banner ul li.select {
+    display:block;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+.imgnum span {
+    border-radius:10px; 
+    font:normal normal bold 12px/15px 微软雅黑; 
+    color:#FFF; 
+    margin-left:5px; 
+    padding:3px 6px 3px 6px;  
+    background-color:#F90; 
+    cursor:pointer;
+}
+.imgnum span.onselect {
+    background-color:#F00;
+}
+.imgnum {
+    text-align:center; 
+    float:right; 
+    margin:-30px 30px; 
+    position:relative;
+}
+
+.container {
+    margin: 0px auto;
+    padding-top: 328px;
+}
+
+.feature {
+    width: 320px;
+    height: 200px;
+}
+
+.restaurant_intro_img {
+    width: 105px;
+    height: 113px;
+}
