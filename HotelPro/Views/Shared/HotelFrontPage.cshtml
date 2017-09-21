@@ -1,5 +1,7 @@
 ﻿<!DOCTYPE html>
 
+
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -9,8 +11,7 @@
     <link href="~/Styles/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Styles/css/MasterPage.css" rel="stylesheet" />
     <script src="~/Styles/js/bootstrap.js"></script>
-    
-    
+
     <script type="text/javascript">
         var time = "";
         var index = 1;
@@ -22,7 +23,7 @@
                     $(".imgnum span").removeClass("onselect").eq(icon - 1).addClass("onselect");
                     $("#banner_img li").hide().stop(true, true).eq(icon - 1).fadeIn("slow");
                 },
-                function() {
+                function () {
                     index = $(this).text() > 1 ? 1 : parseInt($(this).text()) + 1;
                     time = setTimeout("showimg(" + index + ")", 3000);
                 });
@@ -40,15 +41,15 @@
 <body>
 <header>
     <div class="logo">
-        <img src="~/Images/topbg.png" width="1000px" height="92px"/>
+        <img src="~/Images/topbg.png" width="1000px" height="92px" />
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">首页</a> |
-                    <a class="nav-link" href="#">公司介绍</a> |
+                    <a class="nav-link" href="/Home/Index">首页</a> |
+                    <a class="nav-link" href="/Introduction/Index">公司介绍</a> |
                     <a class="nav-link" href="#">餐厅环境</a> |
                     <a class="nav-link" href="#">新闻动态</a> |
                     <a class="nav-link" href="#">美食展示</a> |
@@ -61,7 +62,7 @@
             </ul>
         </div>
     </nav>
-    
+
     <div class="banner">
         <ul id="banner_img">
             <li><img src="~/Images/topflash1.jpg" /></li>
@@ -74,39 +75,42 @@
         </div>
 
     </div>
-</header>             
+</header>
 <div class="container">
-    <aside>
-        <div class="feature">
-            <img src="~/Images/title2.jpg" />
-            <img class="restaurant_intro_img" src=""/>
-            <div class="restaurant_intro_text">
-                
-            </div>
-        </div>
-        <div>
-            <img src="~/Images/title2.jpg" />
-            <img class="restaurant_intro_img" src=""/>
-            <div class="restaurant_intro_text">
-                
-            </div>
-        </div>
-    </aside>
-    <section>
-        
-    </section>
+    <div>
+        @RenderBody()
+    </div>
 </div>
 
-<footer></footer>
+<footer>
+    <div class="bottom-text">
+        <div class="bottom-list">
+            <ul>
+                <li>
+                    <a>关于我们</a> |
+                </li>
+                <li>
+                    <a>联系方式</a> |
+                </li>
+                <li>
+                    <a>加盟连锁</a> |
+                </li>
+                <li>
+                    <a>投诉建议</a> |
+                </li>
+                <li>
+                    <a>友情链接</a>
+                </li>
+            </ul>
+        </div>
+        <div class="copyright">
+            版权所有 Copyright(C)2010-2020好运来酒店
+        </div>
+    </div>
+    <div class="bottom">
 
+    </div>
+</footer>
 
-
-
-
-
-
-<div>
-    @RenderBody()
-</div>
 </body>
 </html>

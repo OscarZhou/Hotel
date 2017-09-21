@@ -7,9 +7,11 @@ ul {
     list-style: none;
 }
 
+/*header*/
+
 header {
     width: 1000px;
-    height: 92px;
+    height: 432px;
     margin: 0px auto;
 }
 header > nav {
@@ -78,17 +80,138 @@ header > nav > div {
     position:relative;
 }
 
+/*container part*/
+
 .container {
     margin: 0px auto;
-    padding-top: 328px;
+    width: 1000px;
+    padding: 0px 6px;
+    background-color: #FFB70C;
+    font-size: 12px;
 }
 
-.feature {
-    width: 320px;
-    height: 200px;
+aside {
+    width: 250px;
+    float: left;
 }
 
-.restaurant_intro_img {
-    width: 105px;
-    height: 113px;
+aside div.title {
+    width: 250px;
+    height: 29px;
+    color: #ffffff;
+    background-image: url(../../Images/title1.jpg);
+    padding-left: 30px;
+    padding-top: 6px;
+}
+
+section {
+    float: left;
+    width: 738px;
+}
+
+section div.title {
+    width: 738px;
+    height: 29px;
+    background-image: url(../../Images/othermaster/title2.jpg);
+    color: #ffffff;
+    padding-left: 40px;
+    padding-top: 7px;
+}
+
+/*introduction*/
+
+.item-content {
+    height: 230px;
+    background-color: #FFB70C;
+    color: #ffffff;
+
+}
+
+.item-content ul {
+    width: 200px;
+    margin: 0px auto;
+    padding-top: 30px;
+    margin-left: -5px;
+}
+
+
+.item-content li {
+    width: 158px;
+    height: 29px;
+    background-image: url(../../Images/othermaster/item.png);
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.item-content a {
+    color: #ffffff;
+}
+
+.contact-item {
+    height: 230px;
+}
+
+.contact-item ul {
+    width: 200px;
+    padding-top: 30px;
+}
+
+.contact-item li {
+    margin-top: 5px;
+}
+
+.intro-content {
+    width: 738px;
+    height: 500px;
+    background-color: #ffffff;
+}
+
+/*footer*/
+
+footer {
+    margin: 0px auto;
+    width: 1000px;
+    color: #ffffff;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+.bottom-text {
+    background-color:#747B38;
+    height: 92px;
+    width: 1000px;
+    text-align: center;
+}
+
+.bottom-list {
+    padding-top: 25px;
+    width: 400px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin: 0px auto;
+    padding-left: 30px;
+}
+
+.bottom-list ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.bottom-list li {
+    float: left;
+    margin: 0 auto;
+    margin-right: 5px;
+}
+
+.copyright {
+    margin-top: 20px;
+    clear: both;
+}
+
+.bottom {
+    background-image: url(../../Images/bg.jpg);
+    height: 50px;
 }
