@@ -167,6 +167,13 @@ section div.title {
     background-color: #ffffff;
 }
 
+/*environment*/
+.dish-category {
+    height: 500px;
+    background-color: #FFB70C;
+    color: #ffffff;
+}
+
 /*footer*/
 
 footer {
