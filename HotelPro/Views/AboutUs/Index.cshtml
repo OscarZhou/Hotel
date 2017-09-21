@@ -3,56 +3,59 @@
     Layout = "~/Views/Shared/HotelFrontPage.cshtml";
 }
 
-
-<aside>
-    <div class="item-nav">
-        <div class="title">栏目导航</div>
-        <div class="item-content">
-            <ul>
-                <li>
-                    <a href="#">公司介绍</a>
-                </li>
-                <li>
-                    <a href="#">企业文化</a>
-                </li>
-                <li>
-                    <a href="#">企业荣誉</a>
-                </li>
-                <li>
-                    <a href="#">企业荣誉</a>
-                </li>
-                <li>
-                    <a href="#">发展历程</a>
-                </li>
-            </ul>
-        </div>
+@section itemnav{
+<div class="item-nav">
+    <div class="title">栏目导航</div>
+    <div class="item-content">
+        <ul>
+            <li>
+                <a href="#">公司介绍</a>
+            </li>
+            <li>
+                <a href="#">企业文化</a>
+            </li>
+            <li>
+                <a href="#">企业荣誉</a>
+            </li>
+            <li>
+                <a href="#">企业荣誉</a>
+            </li>
+            <li>
+                <a href="#">发展历程</a>
+            </li>
+        </ul>
     </div>
-    <div class="contact">
-        <div class="title">联系方式</div>
-        <div class="contact-item">
-            <ul>
-                <li>
-                    地&nbsp; 址：杭州市莫山南路888号<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  汽车南站旁
-                </li>
-                <li>
-                    电&nbsp; 话：0571-98888888<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  0571-98999999
-                </li>
-                <li>
-                    传&nbsp; 真：0571-98777777
-                </li>
-                <li>
-                    邮&nbsp; 箱：boss@mail.com
-                </li>
-            </ul>
-        </div>
-    </div>
-</aside>
+</div>
+}
 
-<section>
-    <div class="title">您现在位置：中式餐饮酒店 > 公司简介</div>
-    <div class="intro-content">
-
+@section contact{
+<div class="contact">
+    <div class="title">联系方式</div>
+    <div class="contact-item">
+        <ul>
+            <li>
+                地&nbsp; 址：杭州市莫山南路888号<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 汽车南站旁
+            </li>
+            <li>
+                电&nbsp; 话：0571-98888888<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0571-98999999
+            </li>
+            <li>
+                传&nbsp; 真：0571-98777777
+            </li>
+            <li>
+                邮&nbsp; 箱：boss@mail.com
+            </li>
+        </ul>
     </div>
-</section>
+</div>
+}
+
+@section righttitle{
+    您现在位置：中式餐饮酒店 > 关于我们
+}
+
+<div class="intro-content">
+
+</div>

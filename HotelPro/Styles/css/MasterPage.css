@@ -161,14 +161,17 @@ section div.title {
     margin-top: 5px;
 }
 
-.intro-content {
-    width: 738px;
-    height: 500px;
-    background-color: #ffffff;
-}
+
 
 /*environment*/
 .dish-category {
+    height: 500px;
+    background-color: #FFB70C;
+    color: #ffffff;
+}
+
+/*news*/
+.company-news {
     height: 500px;
     background-color: #FFB70C;
     color: #ffffff;

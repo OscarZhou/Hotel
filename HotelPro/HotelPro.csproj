@@ -108,6 +108,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\HotelAdmin\Controllers\SysAdminController.cs" />
+    <Compile Include="Areas\HotelAdmin\HotelAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\BookOnlineController.cs" />
     <Compile Include="Controllers\DishController.cs" />
@@ -183,6 +185,7 @@
     <Content Include="Styles\css\bootstrap-theme.min.css" />
     <Content Include="Styles\css\bootstrap.css" />
     <Content Include="Styles\css\bootstrap.min.css" />
+    <Content Include="Styles\css\ContentPage.css" />
     <Content Include="Styles\css\HomePage.css" />
     <Content Include="Styles\css\jquery-3.1.1.min.js" />
     <Content Include="Styles\css\MasterPage.css" />
@@ -201,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\HotelAdmin\Models\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
@@ -234,6 +238,9 @@
     <Content Include="Views\Introduction\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\HotelAdmin\Views\Web.config" />
+    <Content Include="Areas\HotelAdmin\Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Areas\HotelAdmin\Views\SysAdmin\AdminMain.cshtml" />
     <None Include="Properties\PublishProfiles\HotelPro.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Environment\Index.cshtml" />

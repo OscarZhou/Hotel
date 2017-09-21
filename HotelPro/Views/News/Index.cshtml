@@ -3,28 +3,29 @@
     Layout = "~/Views/Shared/HotelFrontPage.cshtml";
 }
 
-<aside>
-    <div class="dish-category">
-        <div class="title">栏目导航</div>
-        <div class="item-content">
-            <ul>
-                <li>
-                    <a href="#">公司新闻</a>
-                </li>
-                <li>
-                    <a href="#">行业动态</a>
-                </li>
-                <li>
-                    <a href="#">促销信息</a>
-                </li>
-            </ul>
-        </div>
+@section companynews{
+<div class="company-news">
+    <div class="title">栏目导航</div>
+    <div class="item-content">
+        <ul>
+            <li>
+                <a href="#">公司新闻</a>
+            </li>
+            <li>
+                <a href="#">行业动态</a>
+            </li>
+            <li>
+                <a href="#">促销信息</a>
+            </li>
+        </ul>
     </div>
-</aside>
+</div>
+}
 
-<section>
-    <div class="title">您现在位置：中式餐饮酒店 > 公司简介</div>
-    <div class="intro-content">
+@section righttitle{
+    您现在位置：中式餐饮酒店 > 新闻动态
+}
 
-    </div>
-</section>
+<div class="intro-content">
+
+</div>

@@ -6,6 +6,7 @@
     <script src="~/Styles/css/jquery-3.1.1.min.js"></script>
     <link href="~/Styles/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Styles/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Styles/css/ContentPage.css" rel="stylesheet" />
     <link href="~/Styles/css/MasterPage.css" rel="stylesheet" />
     <script src="~/Styles/js/bootstrap.js"></script>
     <title>@ViewBag.Title</title>
@@ -75,9 +76,22 @@
     </div>
 </header>
 <div class="container">
-    <div>
-        @RenderBody()
-    </div>
+    <aside>
+        @RenderSection("itemnav", required:false)
+        
+        @RenderSection("contact", required: false)
+        
+        @RenderSection("companynews", required: false)
+        
+        @RenderSection("dishcategory", required: false)
+        
+    </aside>
+    <section>
+        <div class="title">@RenderSection("righttitle", required: false)</div>
+        <div>
+            @RenderBody()
+        </div>
+    </section>
 </div>
 
 <footer>
