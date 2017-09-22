@@ -8,6 +8,10 @@ header {
     margin: 0px auto;
 }
 
+header > nav > div {
+    padding-top: 20px;
+}
+
 .container {
     margin: 0px auto;
     width: 1000px;
@@ -53,10 +57,6 @@ section form.login {
     padding-top: 30px;
 }
 
-.login-control input {
-    border-radius: 5px;
-}
-
 .login-control ul {
     list-style: none;
     margin-left: -20px;
@@ -65,6 +65,11 @@ section form.login {
 .login-control li {
     margin-bottom: 30px;
     font-size: 15px;
+}
+
+.adminlogin {
+    width: 180px;
+    border-radius: 5px;
 }
 
 input.submit {

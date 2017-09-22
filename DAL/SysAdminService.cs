@@ -8,29 +8,43 @@ namespace DAL
 {
     public class SysAdminService
     {
+        /// <summary>
+        /// Admin login
+        /// </summary>
+        /// <param name="objAdmin"></param>
+        /// <returns></returns>
         public SysAdmin Login(SysAdmin objAdmin)
         {
             string sql =
-                "SELECT LoginId, LoginPwd, LoginName FROM [dbo].[SysAdmins] WHERE LoginId = @LoginId and LoginPwd = @LoginPwd";
+                "SELECT LoginName FROM [dbo].[SysAdmins] WHERE LoginId = @LoginId and LoginPwd = @LoginPwd";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@LoginId", objAdmin.LoginId), 
                 new SqlParameter("@LoginPwd", objAdmin.LoginPwd)
             };
 
-            SysAdmin objRetAdmin = null;
-            SqlDataReader objReader = SQLHelper.GetReader(sql, param);
-            if (objReader.Read())
+            try
             {
-                objRetAdmin = new SysAdmin()
+                SqlDataReader objReader = SQLHelper.GetReader(sql, param);
+                if (objReader.Read())
                 {
-                    LoginId = Convert.ToInt32(objReader["LoginId"]),
-                    LoginPwd = objReader["LoginPwd"].ToString(),
-                    LoginName = objReader["LoginName"].ToString()
-                };
+                    objAdmin = new SysAdmin()
+                    {
+                        LoginName = objReader["LoginName"].ToString()
+                    };
+                }
+                else
+                {
+                    objAdmin = null;
+                }
+                objReader.Close();
             }
-            objReader.Close();
-            return objRetAdmin;
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return objAdmin;
          }
     }
 }

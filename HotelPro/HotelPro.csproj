@@ -248,6 +248,7 @@
     <Content Include="Areas\HotelAdmin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\HotelAdmin\Views\SysAdmin\AdminMain.cshtml" />
     <Content Include="Areas\HotelAdmin\Views\SysAdmin\Index.cshtml" />
+    <Content Include="Areas\HotelAdmin\Views\SysAdmin\AdminLogin.cshtml" />
     <None Include="Properties\PublishProfiles\HotelPro.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Environment\Index.cshtml" />

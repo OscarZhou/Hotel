@@ -17,7 +17,7 @@ namespace HotelPro.Areas.HotelAdmin
             context.MapRoute(
                 "HotelAdmin_default",
                 "HotelAdmin/{controller}/{action}/{id}",
-                new {action = "Index", id = UrlParameter.Optional }
+                new {action = "AdminLogin", id = UrlParameter.Optional }
             );
         }
     }
