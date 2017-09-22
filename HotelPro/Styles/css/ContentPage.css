@@ -18,6 +18,8 @@
     float: left;
 }
 
+/*environment*/
+
 .environment-content {
     padding: 20px 0px 20px;
     width: 738px;
@@ -32,9 +34,20 @@
 .environment-content li {
     float: left;
     margin-bottom: 20px;
+    width: 150px;
+    margin-right: 15px;
 }
 
 .environment-content img {
     border: 2px solid #D0C396;
-    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.environment-content a {
+    width: 150px;
+    text-align: center;
+}
+
+.frame-up {
+    
 }

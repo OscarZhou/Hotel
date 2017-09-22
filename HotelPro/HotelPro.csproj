@@ -112,6 +112,7 @@
     <Compile Include="Areas\HotelAdmin\HotelAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\BookOnlineController.cs" />
+    <Compile Include="Controllers\CompanyInfoController.cs" />
     <Compile Include="Controllers\DishController.cs" />
     <Compile Include="Controllers\EnvironmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -253,6 +254,12 @@
     <Content Include="Views\Recruitment\Index.cshtml" />
     <Content Include="Views\JoinUs\Index.cshtml" />
     <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\CompanyInfo\Index.cshtml" />
+    <Content Include="Views\CompanyInfo\Introduction.cshtml" />
+    <Content Include="Views\CompanyInfo\AboutUs.cshtml" />
+    <Content Include="Views\CompanyInfo\Environment.cshtml" />
+    <Content Include="Views\CompanyInfo\EnvironmentDetail.cshtml" />
+    <Content Include="Views\CompanyInfo\JoinUs.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

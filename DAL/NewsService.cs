@@ -16,7 +16,7 @@ namespace DAL
         /// <returns></returns>
         public List<News> GetNews(int count)
         {
-            string sql = "SELECT TOP @COUNT NewsId, NewsTitle, NewsContents, PublishTime, CategoryId, CategoryName FROM [dbo].[News] INNER JOIN [dbo].[NewsCategory] ON NewsCateogry.CategoryId = News.CategoryId ORDER BY PublishTime DESC";
+            string sql = "SELECT TOP (@COUNT) NewsId, NewsTitle, NewsContents, PublishTime, News.CategoryId, CategoryName FROM [dbo].[News] INNER JOIN [dbo].[NewsCategory] ON NewsCategory.CategoryId = News.CategoryId ORDER BY PublishTime DESC";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@COUNT", count)

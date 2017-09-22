@@ -12,5 +12,9 @@ namespace HotelPro.Controllers
             return View("Index");
         }
 
+        public ActionResult ViewInfo()
+        {
+            return View("Detail");
+        }
     }
 }
