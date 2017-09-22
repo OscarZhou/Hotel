@@ -132,6 +132,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
     <Content Include="Images\bg.jpg" />
+    <Content Include="Images\default.png" />
     <Content Include="Images\dish\100.PNG" />
     <Content Include="Images\dish\101.PNG" />
     <Content Include="Images\dish\102.PNG" />
@@ -161,7 +162,9 @@
     <Content Include="Images\joinus\joinus.jpg" />
     <Content Include="Images\leftimage1.jpg" />
     <Content Include="Images\listt.jpg" />
+    <Content Include="Images\loginimg.jpg" />
     <Content Include="Images\navbg.jpg" />
+    <Content Include="Images\navbg_ht.jpg" />
     <Content Include="Images\othermaster\company.jpg" />
     <Content Include="Images\othermaster\item.png" />
     <Content Include="Images\othermaster\line.jpg" />
@@ -176,6 +179,7 @@
     <Content Include="Images\title4.jpg" />
     <Content Include="Images\topbg.jpg" />
     <Content Include="Images\topbg.png" />
+    <Content Include="Images\topbg_ht.png" />
     <Content Include="Images\topflash1.jpg" />
     <Content Include="Images\topflash2.jpg" />
     <Content Include="Images\zhaopai1.jpg" />
@@ -188,7 +192,8 @@
     <Content Include="Styles\css\bootstrap.min.css" />
     <Content Include="Styles\css\ContentPage.css" />
     <Content Include="Styles\css\HomePage.css" />
-    <Content Include="Styles\css\jquery-3.1.1.min.js" />
+    <Content Include="Styles\css\SysAdminPage.css" />
+    <Content Include="Styles\js\jquery-3.1.1.min.js" />
     <Content Include="Styles\css\MasterPage.css" />
     <Content Include="Styles\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Styles\js\bootstrap.js" />
@@ -242,6 +247,7 @@
     <Content Include="Areas\HotelAdmin\Views\Web.config" />
     <Content Include="Areas\HotelAdmin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\HotelAdmin\Views\SysAdmin\AdminMain.cshtml" />
+    <Content Include="Areas\HotelAdmin\Views\SysAdmin\Index.cshtml" />
     <None Include="Properties\PublishProfiles\HotelPro.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Environment\Index.cshtml" />

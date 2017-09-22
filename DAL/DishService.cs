@@ -17,14 +17,14 @@ namespace DAL
         public List<Dish> GetDishes(int count)
         {
             string sql =
-                "SELECT TOP @COUNT DishId, DishName, UnitPrice, CategoryId, CategoryName FROM [dbo].[Dish] INNER JOIN [dbo].[DishCategory] ON DishCategory.CategoryId = Dish.CategoryId";
+                "SELECT TOP (@COUNT) DishId, DishName, UnitPrice, Dish.CategoryId, CategoryName, DishImg FROM [dbo].[Dish] INNER JOIN [dbo].[DishCategory] ON DishCategory.CategoryId = Dish.CategoryId";
 
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@COUNT", count) 
             };
 
-            List<Dish> list = null;
+            List<Dish> list = new List<Dish>();
             SqlDataReader objReader = SQLHelper.GetReader(sql, param);
             while (objReader.Read())
             {
@@ -34,7 +34,8 @@ namespace DAL
                     CategoryName = objReader["CategoryName"].ToString(),
                     DishId = Convert.ToInt32(objReader["DishId"]),
                     DishName = objReader["DishName"].ToString(),
-                    UnitPrice = Convert.ToDouble(objReader["UnitPrice"])
+                    UnitPrice = Convert.ToDouble(objReader["UnitPrice"]),
+                    DishImage = objReader["DishImg"].ToString()
                 });
             }
             objReader.Close();

@@ -9,8 +9,9 @@ namespace HotelPro.Areas.HotelAdmin.Controllers
 
         public ActionResult Index()
         {
-            return View("AdminMain");
+            return View("Index");
         }
+
 
     }
 }
