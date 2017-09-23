@@ -15,6 +15,11 @@ namespace HotelPro.Areas.HotelAdmin.Controllers
             return View("AdminLogin");
         }
 
+        [Authorize]
+        public ActionResult AdminMain()
+        {
+            return View();
+        }
         // Admin login
         public ActionResult LoginUser(SysAdmin objSysAdmin)
         {
@@ -40,6 +45,18 @@ namespace HotelPro.Areas.HotelAdmin.Controllers
                 return View("AdminLogin");
             }
             
+        }
+
+        /// <summary>
+        /// Exit system
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ExitSystem()
+        {
+            Session["currentAdmin"] = null;
+            Session.Abandon();
+            FormsAuthentication.SignOut();
+            return View("AdminLogin");
         }
 
         public ActionResult SuccessedLogin()

@@ -186,6 +186,7 @@
     <Content Include="Images\zhaopai2.jpg" />
     <Content Include="Images\zhaopai3.jpg" />
     <Content Include="Images\zhaopai4.jpg" />
+    <Content Include="Styles\css\AdminContentPage.css" />
     <Content Include="Styles\css\bootstrap-theme.css" />
     <Content Include="Styles\css\bootstrap-theme.min.css" />
     <Content Include="Styles\css\bootstrap.css" />

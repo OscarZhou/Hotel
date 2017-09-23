@@ -1,6 +1,10 @@
 ﻿body {
     margin: 0px auto;
-       
+}
+
+
+ul {
+    list-style: none;
 }
 
 header {
@@ -8,9 +12,29 @@ header {
     margin: 0px auto;
 }
 
+/*master layout part*/
+
+header > nav {
+    background-image: url(../../Images/navbg_ht.jpg);
+    color: #ffffff;
+    height: 50px;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+header a {
+    color: #ffffff;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: small;
+}
+
 header > nav > div {
     padding-top: 20px;
 }
+
 
 .container {
     margin: 0px auto;
@@ -86,6 +110,9 @@ footer {
     color: #ffffff;
 }
 
+footer a {
+    color: #ffffff;
+}
 
 .bottom-text {
     background-color:#747B38;
@@ -93,4 +120,8 @@ footer {
     width: 1000px;
     text-align: center;
     padding-top: 30px;
+}
+
+.copyright span{
+    margin-right: 10px;
 }
