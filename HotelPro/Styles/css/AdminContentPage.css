@@ -8,3 +8,10 @@
     text-align: center;
     padding-top: 100px;
 }
+
+.add-dishes {
+    width: 1000px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
