@@ -1,0 +1,127 @@
+﻿body {
+    margin: 0px auto;
+}
+
+
+ul {
+    list-style: none;
+}
+
+header {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+/*master layout part*/
+
+header > nav {
+    background-image: url(../../Images/navbg_ht.jpg);
+    color: #ffffff;
+    height: 50px;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+header a {
+    color: #ffffff;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: small;
+}
+
+header > nav > div {
+    padding-top: 20px;
+}
+
+
+.container {
+    margin: 0px auto;
+    width: 1000px;
+    padding: 0px 6px;
+    background-color: #FFB70C;
+    font-size: 12px;
+}
+
+aside {
+    width: 494px;
+    float: left;
+}
+
+aside img {
+    margin: 40px 30px 40px 50px;
+    border-radius: 20px;
+}
+
+section {
+    width: 494px;
+    float: left;
+}
+
+section form.login {
+    width: 400px;
+    margin: 40px 30px 40px 50px;
+    border-radius: 20px;
+    border: 1px solid #CFA237
+}
+
+.login-text {
+    font-size: 40px;
+    width: 400px;
+    height: 60px;
+    text-align: center;
+    border-bottom : 1px solid #CFA237
+}
+
+.login-control {
+    width: 400px;
+    height: 240px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.login-control ul {
+    list-style: none;
+    margin-left: -20px;
+}
+
+.login-control li {
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.adminlogin {
+    width: 180px;
+    border-radius: 5px;
+}
+
+input.submit {
+    background-color: #676D2D;
+    color: #ffffff;
+    border-style: none;
+    width: 100px;
+    height: 30px;
+}
+
+footer {
+    margin: 0px auto;
+    width: 1000px;
+    color: #ffffff;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+.bottom-text {
+    background-color:#747B38;
+    height: 92px;
+    width: 1000px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.copyright span{
+    margin-right: 10px;
+}

@@ -1,0 +1,53 @@
+﻿body {
+}
+
+/*company description*/
+
+.intro-content {
+    padding: 20px 30px;
+    font-size: 14px;
+    width: 738px;
+    height: 500px;
+    background-color: #ffffff;
+}
+
+
+.intro-content img {
+    padding-right: 20px;
+    padding-bottom: 10px;
+    float: left;
+}
+
+/*environment*/
+
+.environment-content {
+    padding: 20px 0px 20px;
+    width: 738px;
+    height: 500px;
+    background-color: #ffffff;
+}
+
+.environment-content ul{
+    margin: 20px 0px;
+}
+
+.environment-content li {
+    float: left;
+    margin-bottom: 20px;
+    width: 150px;
+    margin-right: 15px;
+}
+
+.environment-content img {
+    border: 2px solid #D0C396;
+    margin-bottom: 5px;
+}
+
+.environment-content a {
+    width: 150px;
+    text-align: center;
+}
+
+.frame-up {
+    
+}

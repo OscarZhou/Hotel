@@ -1,0 +1,10 @@
+﻿body {
+}
+
+.welcome {
+    width: 1000px;
+    height: 400px;
+    font-size: 70px;
+    text-align: center;
+    padding-top: 100px;
+}

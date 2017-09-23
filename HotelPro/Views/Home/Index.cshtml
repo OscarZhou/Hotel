@@ -1,0 +1,201 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <script src="~/Styles/css/jquery-3.1.1.min.js"></script>
+    <link href="~/Styles/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Styles/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Styles/css/HomePage.css" rel="stylesheet" />
+    <script src="~/Styles/js/bootstrap.js"></script>
+    <title>首页</title>
+
+    <script type="text/javascript">
+        var time = "";
+        var index = 1;
+        $(function () {
+            showimg(index);
+            $(".imgnum span").hover(function () {
+                clearTimeout(time);
+                var icon = $(this).text();
+                $(".imgnum span").removeClass("onselect").eq(icon - 1).addClass("onselect");
+                $("#banner_img li").hide().stop(true, true).eq(icon - 1).fadeIn("slow");
+            },
+                function () {
+                    index = $(this).text() > 1 ? 1 : parseInt($(this).text()) + 1;
+                    time = setTimeout("showimg(" + index + ")", 3000);
+                });
+        });
+
+        function showimg(num) {
+            index = num;
+            $(".imgnum span").removeClass("onselect").eq(index - 1).addClass("onselect");
+            $("#banner_img li").hide().stop(true, true).eq(index - 1).fadeIn("slow");
+            index = index + 1 > 2 ? 1 : index + 1;
+            time = setTimeout("showimg(" + index + ")", 3000);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="~/Images/topbg.png" width="1000" height="92" />
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Index">首页</a> |
+                        <a class="nav-link" href="/Introduction/Index">公司介绍</a> |
+                        <a class="nav-link" href="/Environment/Index">餐厅环境</a> |
+                        <a class="nav-link" href="/News/Index">新闻动态</a> |
+                        <a class="nav-link" href="/Dish/Index">美食展示</a> |
+                        <a class="nav-link" href="/BookOnline/Index">在线预订</a> |
+                        <a class="nav-link" href="/Suggestion/Index">投诉建议</a> |
+                        <a class="nav-link" href="/Recruitment/Index">招聘信息</a> |
+                        <a class="nav-link" href="/JoinUs/Index">加盟连锁</a> |
+                        <a class="nav-link" href="/AboutUs">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="banner">
+            <ul id="banner_img">
+                <li><img src="~/Images/topflash1.jpg" /></li>
+                <li><img src="~/Images/topflash2.jpg" /></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="imgnum">
+                <span class="onselect">1</span>
+                <span>2</span>
+            </div>
+
+        </div>
+    </header>
+    <div class="container">
+        <aside>
+            <div class="intro">
+                <img src="~/Images/title2.jpg" width="342"/>
+                <img class="restaurant_intro_img" src="~/Images/leftimage1.jpg" />
+                <div class="restaurant_intro_text">
+                    杭州市某某餐饮连锁公司，融合现代快餐理念，开创了更符合国人膳食结构与饮食习惯的快速餐饮体系。以外卖+快速餐饮的新颖模式，引爆各地巨大市场，相继开发了活力早餐、拉面米线、馄饨水饺、商务简餐。
+                </div>
+            </div>
+            <div class="news">
+                <div class="title" width="320">最新新闻</div>
+                <div class="restaurant_news_text">
+                    <ul>
+                        <li>
+                            ><a>互联网的消费正在兴起</a>
+                            <div>2014-08-04</div>
+                        </li>
+                        <li>
+                            ><a>互联网的消费正在兴起dsafdafasdfsf</a>
+                            <div>2014-08-04</div>
+                        </li>
+                        <li>
+                            ><a>互联网的消费正在兴起</a>
+                            <div>2014-08-04</div>
+                        </li>
+                        <li>
+                            ><a>互联网的消费正在兴起</a>
+                            <div>2014-08-04</div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <section>
+            <div class="feature-environment">
+                <div class="feature">
+                    <img src="~/Images/title3.jpg" width="342"/>
+                    <div class="feature-dish">
+                        <img class="restaurant_feat_img" src="~/Images/zhaopai3.jpg" />
+                        <div class="restaurant_feat_text">
+                            柔嫩皮脆，味碟解腻。此菜关键在于味碟的调制，以往的味碟多是蒜泥味的，而本碟则是加了辣椒、葱末等，味道真的很怀旧又开胃。所以，一道常见的菜，只要在小细
+                        </div>
+                    </div>
+                    <div class="feature-dish">
+                        <img class="restaurant_feat_img" src="~/Images/zhaopai4.jpg" />
+                        <div class="restaurant_feat_text">
+                            特点：柔嫩皮脆，味碟解腻。此菜关键在于味碟的调制，以往的味碟多是蒜泥味的，而本碟则是加了辣椒、葱末等，味道真的很怀旧又开胃。所以，一道常见的菜，只要
+                        </div>
+                    </div>
+                </div>
+                <div class="environment">
+                    <img src="~/Images/title4.jpg" width="274" height="31"/>
+                    <div class="environment-display">
+                        <img src="~/Images/huanjing1.jpg" />
+                    </div>
+
+                </div> 
+            </div>
+            <div class="feature-dishes-display">
+                <ul>
+                    <li>
+                        <img src="~/Images/zhaopai1.jpg" />
+                        <div>
+                            招牌菜一
+                        </div>
+                    </li>
+                    <li>
+                        <img src="~/Images/zhaopai2.jpg" />
+                        <div>
+                            招牌菜二
+                        </div>
+                    </li>
+                    <li>
+                        <img src="~/Images/zhaopai3.jpg" />
+                        <div>
+                            招牌菜三
+                        </div>
+                    </li>
+                    <li>
+                        <img src="~/Images/zhaopai4.jpg" />
+                        <div>
+                            招牌菜四
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+
+<footer>
+    <div class="bottom-text">
+        <div class="bottom-list">
+            <ul>
+                <li>
+                    <a>关于我们</a> |
+                </li>
+                <li>
+                    <a>联系方式</a> |
+                </li>
+                <li>
+                    <a>加盟连锁</a> |
+                </li>
+                <li>
+                    <a>投诉建议</a> |
+                </li>
+                <li>
+                    <a>友情链接</a>
+                </li>
+            </ul>    
+        </div>
+        <div class="copyright">
+            版权所有 Copyright(C)2010-2020好运来酒店
+        </div>
+    </div>
+    <div class="bottom">
+        
+    </div>
+</footer>
+
+</body>
+</html>

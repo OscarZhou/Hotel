@@ -108,6 +108,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\HotelAdmin\Controllers\SysAdminController.cs" />
+    <Compile Include="Areas\HotelAdmin\HotelAdminAreaRegistration.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\BookOnlineController.cs" />
+    <Compile Include="Controllers\CompanyInfoController.cs" />
+    <Compile Include="Controllers\DishController.cs" />
+    <Compile Include="Controllers\EnvironmentController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IntroductionController.cs" />
+    <Compile Include="Controllers\JoinUsController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\RecruitmentController.cs" />
+    <Compile Include="Controllers\SuggestionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -118,6 +131,75 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\default.png" />
+    <Content Include="Images\dish\100.PNG" />
+    <Content Include="Images\dish\101.PNG" />
+    <Content Include="Images\dish\102.PNG" />
+    <Content Include="Images\dish\103.PNG" />
+    <Content Include="Images\dish\104.PNG" />
+    <Content Include="Images\dish\105.PNG" />
+    <Content Include="Images\dish\106.PNG" />
+    <Content Include="Images\dish\107.png" />
+    <Content Include="Images\dish\caipin01.jpg" />
+    <Content Include="Images\dish\caipin02.jpg" />
+    <Content Include="Images\dish\caipin03.jpg" />
+    <Content Include="Images\dish\caipin04.jpg" />
+    <Content Include="Images\dish\caipin05.jpg" />
+    <Content Include="Images\dish\caipin06.jpg" />
+    <Content Include="Images\dish\caipin07.jpg" />
+    <Content Include="Images\dish\caipin08.jpg" />
+    <Content Include="Images\environment\huanjing01.jpg" />
+    <Content Include="Images\environment\huanjing02.jpg" />
+    <Content Include="Images\environment\huanjing03.jpg" />
+    <Content Include="Images\environment\huanjing04.jpg" />
+    <Content Include="Images\environment\huanjing05.jpg" />
+    <Content Include="Images\environment\huanjing06.jpg" />
+    <Content Include="Images\huanjing1.jpg" />
+    <Content Include="Images\huanjing2.jpg" />
+    <Content Include="Images\huanjing3.jpg" />
+    <Content Include="Images\huanjing4.jpg" />
+    <Content Include="Images\joinus\joinus.jpg" />
+    <Content Include="Images\leftimage1.jpg" />
+    <Content Include="Images\listt.jpg" />
+    <Content Include="Images\loginimg.jpg" />
+    <Content Include="Images\navbg.jpg" />
+    <Content Include="Images\navbg_ht.jpg" />
+    <Content Include="Images\othermaster\company.jpg" />
+    <Content Include="Images\othermaster\item.png" />
+    <Content Include="Images\othermaster\line.jpg" />
+    <Content Include="Images\othermaster\search5.gif" />
+    <Content Include="Images\othermaster\title1.jpg" />
+    <Content Include="Images\othermaster\title2.jpg" />
+    <Content Include="Images\rec1.jpg" />
+    <Content Include="Images\rec2.jpg" />
+    <Content Include="Images\title1.jpg" />
+    <Content Include="Images\title2.jpg" />
+    <Content Include="Images\title3.jpg" />
+    <Content Include="Images\title4.jpg" />
+    <Content Include="Images\topbg.jpg" />
+    <Content Include="Images\topbg.png" />
+    <Content Include="Images\topbg_ht.png" />
+    <Content Include="Images\topflash1.jpg" />
+    <Content Include="Images\topflash2.jpg" />
+    <Content Include="Images\zhaopai1.jpg" />
+    <Content Include="Images\zhaopai2.jpg" />
+    <Content Include="Images\zhaopai3.jpg" />
+    <Content Include="Images\zhaopai4.jpg" />
+    <Content Include="Styles\css\AdminContentPage.css" />
+    <Content Include="Styles\css\bootstrap-theme.css" />
+    <Content Include="Styles\css\bootstrap-theme.min.css" />
+    <Content Include="Styles\css\bootstrap.css" />
+    <Content Include="Styles\css\bootstrap.min.css" />
+    <Content Include="Styles\css\ContentPage.css" />
+    <Content Include="Styles\css\HomePage.css" />
+    <Content Include="Styles\css\SysAdminPage.css" />
+    <Content Include="Styles\js\jquery-3.1.1.min.js" />
+    <Content Include="Styles\css\MasterPage.css" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Styles\js\bootstrap.js" />
+    <Content Include="Styles\js\bootstrap.min.js" />
+    <Content Include="Styles\js\npm.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -129,11 +211,63 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Areas\HotelAdmin\Models\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\HotelBLL.csproj">
+      <Project>{c097c38d-078e-480f-9fc1-397a3abfdc12}</Project>
+      <Name>HotelBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{848cda24-2f18-46ca-9204-be2c72117009}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\HotelFrontPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\css\bootstrap-theme.css.map" />
+    <Content Include="Styles\css\bootstrap-theme.min.css.map" />
+    <Content Include="Styles\css\bootstrap.css.map" />
+    <Content Include="Styles\css\bootstrap.min.css.map" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Introduction\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HotelAdmin\Views\Web.config" />
+    <Content Include="Areas\HotelAdmin\Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Areas\HotelAdmin\Views\SysAdmin\AdminMain.cshtml" />
+    <Content Include="Areas\HotelAdmin\Views\SysAdmin\Index.cshtml" />
+    <Content Include="Areas\HotelAdmin\Views\SysAdmin\AdminLogin.cshtml" />
+    <None Include="Properties\PublishProfiles\HotelPro.pubxml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Environment\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Environment\Detail.cshtml" />
+    <Content Include="Views\News\Detail.cshtml" />
+    <Content Include="Views\Dish\Index.cshtml" />
+    <Content Include="Views\BookOnline\Index.cshtml" />
+    <Content Include="Views\Suggestion\Index.cshtml" />
+    <Content Include="Views\Recruitment\Index.cshtml" />
+    <Content Include="Views\JoinUs\Index.cshtml" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\CompanyInfo\Index.cshtml" />
+    <Content Include="Views\CompanyInfo\Introduction.cshtml" />
+    <Content Include="Views\CompanyInfo\AboutUs.cshtml" />
+    <Content Include="Views\CompanyInfo\Environment.cshtml" />
+    <Content Include="Views\CompanyInfo\EnvironmentDetail.cshtml" />
+    <Content Include="Views\CompanyInfo\JoinUs.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
