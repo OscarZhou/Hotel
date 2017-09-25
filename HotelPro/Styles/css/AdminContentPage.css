@@ -15,3 +15,11 @@
     padding-left: 15px;
     padding-bottom: 20px;
 }
+
+.add-dishes input{
+    height: 15px;
+}
+
+div.dish-item {
+    margin-bottom: 10px;
+}

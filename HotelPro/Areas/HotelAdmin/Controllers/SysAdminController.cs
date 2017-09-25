@@ -64,10 +64,6 @@ namespace HotelPro.Areas.HotelAdmin.Controllers
             return View("AdminMain");
         }
 
-        [Authorize]
-        public ActionResult AddDish()
-        {
-            return View("AddDish");
-        }
+
     }
 }

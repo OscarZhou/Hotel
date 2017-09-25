@@ -163,5 +163,24 @@ namespace DAL
             objReader.Close();
             return objDish;
         }
+
+
+        public List<DishCategory> GetDishCategories()
+        {
+            string sql = "SELECT CategoryId, CategoryName FROM [dbo].[DishCategory]";
+            
+            List<DishCategory> list = new List<DishCategory>();
+            SqlDataReader objReader = SQLHelper.GetReader(sql);
+            while (objReader.Read())
+            {
+                list.Add(new DishCategory()
+                {
+                    CategoryId = Convert.ToInt32(objReader["CategoryId"]),
+                    CategoryName = objReader["CategoryName"].ToString()
+                });
+            }
+            objReader.Close();
+            return list;
+        }
     }
 }

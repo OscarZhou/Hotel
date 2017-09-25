@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\HotelAdmin\Controllers\DishesController.cs" />
     <Compile Include="Areas\HotelAdmin\Controllers\SysAdminController.cs" />
     <Compile Include="Areas\HotelAdmin\HotelAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
@@ -194,12 +195,17 @@
     <Content Include="Styles\css\ContentPage.css" />
     <Content Include="Styles\css\HomePage.css" />
     <Content Include="Styles\css\SysAdminPage.css" />
+    <Content Include="Styles\js\jquery-1.4.1.js" />
+    <Content Include="Styles\js\jquery-1.4.1.min.js" />
     <Content Include="Styles\js\jquery-3.1.1.min.js" />
     <Content Include="Styles\css\MasterPage.css" />
     <Content Include="Styles\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Styles\js\bootstrap.js" />
     <Content Include="Styles\js\bootstrap.min.js" />
     <Content Include="Styles\js\npm.js" />
+    <Content Include="Styles\js\uploadPreview.js" />
+    <Content Include="Styles\js\validation-min.js" />
+    <Content Include="Styles\js\validation.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -250,7 +256,7 @@
     <Content Include="Areas\HotelAdmin\Views\SysAdmin\Index.cshtml" />
     <Content Include="Areas\HotelAdmin\Views\SysAdmin\AdminLogin.cshtml" />
     <Content Include="Areas\HotelAdmin\Views\Shared\AdminLayout.cshtml" />
-    <Content Include="Areas\HotelAdmin\Views\SysAdmin\AddDish.cshtml" />
+    <Content Include="Areas\HotelAdmin\Views\Dishes\DishesPublish.cshtml" />
     <None Include="Properties\PublishProfiles\HotelPro.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Environment\Index.cshtml" />

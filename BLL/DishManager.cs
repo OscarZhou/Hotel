@@ -38,5 +38,10 @@ namespace BLL
         {
             return objDishService.GetDish(dishId);
         }
+
+        public List<DishCategory> GetDishCategories()
+        {
+            return objDishService.GetDishCategories();
+        }
     }
 }
