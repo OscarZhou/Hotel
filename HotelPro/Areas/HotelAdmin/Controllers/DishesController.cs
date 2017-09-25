@@ -1,6 +1,7 @@
 ﻿using BLL;
 using Models;
-using System.Collections.Generic;
+using System;
+using System.Web;
 using System.Web.Mvc;
 
 namespace HotelPro.Areas.HotelAdmin.Controllers
@@ -9,30 +10,66 @@ namespace HotelPro.Areas.HotelAdmin.Controllers
     {
         //
         // GET: /HotelAdmin/Dishes/
-
-        [Authorize]
-        public ActionResult Index()
+        public ActionResult DishesPublish()
         {
-            List<DishCategory> objDishCategories = new DishManager().GetDishCategories();
-            List<SelectListItem> items = new List<SelectListItem>();
-            foreach (DishCategory objDishCategory in objDishCategories)
-            {
-                items.Add(new SelectListItem()
-                {
-                    Text = objDishCategory.CategoryName,
-                    Value = objDishCategory.CategoryId.ToString()
-                });
-            }
-            items[0].Selected = true;
-            ViewBag.DishCategory = items;
-            
             return View("DishesPublish");
         }
 
+        /// <summary>
+        /// publish dish
+        /// </summary>
+        /// <param name="objDish"></param>
+        /// <param name="dishImage"></param>
+        /// <returns></returns>
         [Authorize]
-        public ActionResult DoAddDish()
+        public ActionResult DoAddDish(Dish objDish, HttpPostedFileBase dishImage)
         {
-            return View("DishesPublish");
+            //【1】判断文件是否上传成功（文件大小，文件名重名）
+            try
+            {
+                //判断是否有文件
+                if (dishImage != null && dishImage.FileName != "")
+                {
+                    //判断文件大小是否符合要求
+                    double fileLength = dishImage.ContentLength / (1024.0 * 1024.0);
+                    if (fileLength > 2.0)
+                    {
+                        return
+                            Content("<script>alert('图片最大不能超过2mb');location.href='" + Url.Action("DishesPublish") +
+                                    "'</script>");
+                    }
+                    //获取文件名/重命名
+                    string fileName = dishImage.FileName;
+                    fileName = DateTime.Now.ToString("yyyyMMddmmhhss") + ".png";
+                    objDish.DishImage = fileName;
+                    //【2】调用BLL进行内容插入到数据库成功
+                    int res = new DishManager().AddDish(objDish);
+                    if (res > 0)
+                    {
+                        //【3】成功上传图片到项目文件底下
+                        string filePath = Server.MapPath("~/UploadFile/" + fileName);
+                        dishImage.SaveAs(filePath);
+                        return Content("<script>alert('菜品上传成功');location.href='" + Url.Action("DishesPublish") +
+                                       "'</script>");
+                    }
+                    else
+                    {
+                        return Content("<script>alert('菜品上传失败');location.href='" + Url.Action("DishesPublish") +
+                                       "'</script>");
+                    }
+                }
+                else
+                {
+                    return Content("<script>alert('请选择上传文件');location.href='" + Url.Action("DishesPublish") +
+                                       "'</script>");
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+
         }
     }
 }

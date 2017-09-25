@@ -1,4 +1,6 @@
-﻿
+﻿@using BLL
+@using Models
+
 @{
     ViewBag.Title = "添加菜品";
     Layout = "~/Areas/HotelAdmin/Views/Shared/AdminLayout.cshtml";
@@ -8,29 +10,36 @@
 
 <script type="text/javascript">
     $(function() {
-        $("#dishImg").uploadPreview({ Img:"imgHead", width:302,height:227 });
+        $("#DishImage").uploadPreview({ Img: "imgHead", width: 302, height: 227 });
     });
     
 </script>
+
+@{
+    //下拉列表初始化
+    List<DishCategory> objDishCategories = new DishManager().GetDishCategories();
+    int categoryId = Convert.ToInt32(Request.QueryString["categoryId"]);
+    SelectList list = new SelectList(objDishCategories, "CategoryId","CategoryName",Request.QueryString["categoryId"]!=null?objDishCategories[categoryId-1].CategoryId:objDishCategories[0].CategoryId);
+}
 
 <div class="add-dishes">
     @using (Html.BeginForm("DoAddDish", "Dishes", FormMethod.Post, new{enctype="multipart/form-data", id="mainForm", name="mainForm"}))
     {
         <div class="dish-item">
             菜品名称：
-            <input type="text" name="dishName" class="dish-input" />
+            <input type="text" name="DishName" class="dish-input" />
         </div>
-        <div class="dish-item">价格：<input type="text" name="dishPrice" class="dish-input" /></div>
+        <div class="dish-item">价格：<input type="text" name="UnitPrice" class="dish-input" /></div>
         <div class="dish-item">
             菜品分类：
-            @Html.DropDownList("DishCategory")
+            @Html.DropDownList("CategoryId", list)
         </div>
         <div class="dish-item">
             菜品图片：<br />
             <img id="imgHead" width="302" height="227" src="~/Images/default.png" />
         </div>
         <div class="dish-item">
-            <input type="file" id="dishImg" name="dishImg" />
+            <input type="file" id="DishImage" name="DishImage" />
         </div>
         <div class="dish-item">
             <input class="submit" type="submit" id="add" value="新增菜品" />

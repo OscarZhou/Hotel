@@ -50,13 +50,14 @@ namespace DAL
         public int AddDish(Dish objDish)
         {
             string sql =
-                "INSERT INTO [dbo].[Dish] (DishName, UnitPrice, CategoryId) VALUES (@DishName, @UnitPrice, @CategoryId)";
+                "INSERT INTO [dbo].[Dish] (DishName, UnitPrice, CategoryId, DishImg) VALUES (@DishName, @UnitPrice, @CategoryId, @DishImg); SELECT @@IDENTITY";
 
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@DishName", objDish.DishName),
                 new SqlParameter("@UnitPrice", objDish.UnitPrice),
-                new SqlParameter("@CategoryId", objDish.CategoryId) 
+                new SqlParameter("@CategoryId", objDish.CategoryId),
+                new SqlParameter("@DishImg", objDish.DishImage)
             };
 
             int result = SQLHelper.Update(sql, param);

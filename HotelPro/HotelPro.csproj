@@ -220,6 +220,7 @@
     <Folder Include="Areas\HotelAdmin\Models\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="UploadFile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
