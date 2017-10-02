@@ -35,7 +35,8 @@
             {
                 <div class="dish-card">
                     <div class="dish-display">
-                        <img class="dish-img" id="DishImage" src="~/Images/default.png"/>
+                        <img class="dish-img" id="DishImage" src="@Url.Content(String.Format("~/UploadFile/{0}", item.DishImage))"/>
+                        @*<img class="dish-img" id="DishImage" src="~/Images/default.png"/>*@
                     </div>
                     <div class="dish-display">
                         <div class="dish-attr">
