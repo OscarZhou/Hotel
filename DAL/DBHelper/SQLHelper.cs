@@ -280,5 +280,59 @@ namespace DAL.DBHelper
         }
 
         #endregion
+
+
+        /// <summary>
+        /// 执行Sql 命令
+        /// </summary>
+        /// <param name="connectionString">连接字符串</param>
+        /// <param name="commandType">命令类型</param>
+        /// <param name="commandText">sql语句/参数化sql语句/存储过程名</param>
+        /// <param name="commandParameters">参数</param>
+        /// <returns>DataSet 对象</returns>
+        public static DataSet ExecuteDataset(CommandType commandType, string commandText, params SqlParameter[] commandParameters)
+        {
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+
+                SqlCommand cmd = new SqlCommand();
+
+                PrepareCommand(cmd, commandType, conn, commandText, commandParameters);
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataSet ds = new DataSet();
+
+                    da.Fill(ds);
+
+                    return ds;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 设置一个等待执行的SqlCommand对象
+        /// </summary>
+        /// <param name="cmd">SqlCommand 对象，不允许空对象</param>
+        /// <param name="conn">SqlConnection 对象，不允许空对象</param>
+        /// <param name="commandText">Sql 语句</param>
+        /// <param name="cmdParms">SqlParameters  对象,允许为空对象</param>
+        private static void PrepareCommand(SqlCommand cmd, CommandType commandType, SqlConnection conn, string commandText, SqlParameter[] cmdParms)
+        {
+            //打开连接
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+
+            //设置SqlCommand对象
+            cmd.Connection = conn;
+            cmd.CommandText = commandText;
+            cmd.CommandType = commandType;
+
+            if (cmdParms != null)
+            {
+                foreach (SqlParameter parm in cmdParms)
+                    cmd.Parameters.Add(parm);
+            }
+        }
+
     }
 }

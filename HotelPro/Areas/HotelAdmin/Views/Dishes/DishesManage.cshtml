@@ -1,0 +1,78 @@
+﻿@using System.Web.UI.WebControls
+@using BLL
+@using Models
+@using Webdiyer.WebControls.Mvc
+@model HotelPro.Models.Common
+
+@{
+    ViewBag.Title = "菜单管理";
+    Layout = "~/Areas/HotelAdmin/Views/Shared/AdminLayout.cshtml";
+}
+
+@{
+    //下拉框表初始化
+    List<DishCategory> objDishCategories = new DishManager().GetDishCategories();
+    int categoryId = Convert.ToInt32(Request.QueryString["categoryId"]);
+    SelectList list = new SelectList(objDishCategories, "CategoryId", "CategoryName", Request.QueryString["categoryId"] != null ? objDishCategories[categoryId - 1].CategoryId : objDishCategories[0].CategoryId);
+    
+    
+}
+
+<div class="add-dishes">
+    
+    @using (@Html.BeginForm("DoDishQuery", "Dishes", FormMethod.Get))
+    {
+        <div>
+            <span>菜品分类: @Html.DropDownList("CategoryId", list, new {@class = "droplist-dish", name="categoryId"})</span>
+            <span><input class="submit" type="submit" value="提交查询" id="add"/></span>
+        </div>
+    }
+    
+    @{
+        if (Model.Dishes != null)
+        {
+            foreach (var item in Model.Dishes)
+            {
+                <div class="dish-card">
+                    <div class="dish-display">
+                        <img class="dish-img" id="DishImage" src="~/Images/default.png"/>
+                    </div>
+                    <div class="dish-display">
+                        <div class="dish-attr">
+                            菜品名称: @item.DishName
+                        </div>
+                        <div class="dish-attr">
+                            菜品分类: @item.CategoryName
+                        </div>
+                        <div class="dish-attr">
+                            菜品价格:￥@item.UnitPrice
+                        </div>
+                        <div class="dish-attr">
+                            <a href="/Dishes/DishesModify" id="dish-modify" >修改</a>
+                            <a href="/Dishes/DishesDelete" id="dish-delete" >删除</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        
+        
+    }
+   
+    <div class="pager">
+        @Html.Pager(Model.Dishes, new PagerOptions
+        {
+            PageIndexParameterName = "index",
+            ShowPageIndexBox = true,
+            FirstPageText = "首页",
+            PrevPageText = "上一页",
+            NextPageText = "下一页",
+            LastPageText = "末页"
+        })
+        @Html.Raw("共:") @Model.Dishes.TotalPageCount @Html.Raw("页,")
+        @Model.Dishes.CurrentPageIndex @Html.Raw("/") @Model.Dishes.TotalPageCount @Html.Raw("页")    
+    </div>
+    
+        
+
+</div>

@@ -1,8 +1,11 @@
 ﻿using BLL;
+using HotelPro.Models;
 using Models;
 using System;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Webdiyer.WebControls.Mvc;
 
 namespace HotelPro.Areas.HotelAdmin.Controllers
 {
@@ -69,6 +72,31 @@ namespace HotelPro.Areas.HotelAdmin.Controllers
                 throw e;
             }
 
+
+        }
+
+        public ActionResult DoDishQuery(string categoryId, int? index=1)
+        {
+            if (string.IsNullOrEmpty(categoryId))
+            {
+                categoryId = "1";
+            }
+            int pageSize = 2;
+            int pageIndex = index ?? 1;
+            int totalCount = 0;
+            PagedList<Dish> objList =
+                new DishManager().GetDishInfo(categoryId, pageSize, pageIndex, out totalCount)
+                    .AsQueryable()
+                    .ToPagedList(pageIndex, pageSize);
+
+            objList.TotalItemCount = totalCount;
+            objList.CurrentPageIndex = pageIndex;
+
+//            ViewBag.Dishes = objList;
+            Common info = new Common();
+            info.Dishes = objList;
+
+            return View("DishesManage", info);
 
         }
     }

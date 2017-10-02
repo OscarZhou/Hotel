@@ -3,6 +3,7 @@ using DAL.DBHelper;
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DAL
@@ -182,6 +183,37 @@ namespace DAL
             }
             objReader.Close();
             return list;
+        }
+
+
+        public List<Dish> GetDishInfo(string categoryId, int pageSize, int pageIndex, out int totalCount)
+        {
+            string tableName = " Dish ";
+            string id = " DishId ";
+            string innerjoin = " inner join DishCategory on Dish.CategoryId = DishCategory.CategoryId ";
+            string where = " and Dish.CategoryId = ";
+            string fkid = categoryId;
+
+            DataSet ds = Common.GetList(pageSize, pageIndex, tableName, id, innerjoin, where, fkid, out totalCount);
+            List<Dish> objDishes = new List<Dish>();
+            if (ds!=null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    objDishes.Add(new Dish()
+                    {
+                        CategoryId = Convert.ToInt32(categoryId),
+                        CategoryName = dr["CategoryName"].ToString(),
+                        DishId = Convert.ToInt32(dr["DishId"]),
+                        DishImage = dr["DishImg"].ToString(),
+                        DishName = dr["DishName"].ToString(),
+                        UnitPrice = Convert.ToDouble(dr["UnitPrice"])
+                    });
+                }
+            }
+
+            return objDishes;
+
         }
     }
 }

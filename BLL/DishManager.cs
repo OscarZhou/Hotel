@@ -43,5 +43,10 @@ namespace BLL
         {
             return objDishService.GetDishCategories();
         }
+
+        public List<Dish> GetDishInfo(string categoryId, int pageSize, int pageIndex, out int totalCount)
+        {
+            return objDishService.GetDishInfo(categoryId, pageSize, pageIndex, out totalCount);
+        }
     }
 }

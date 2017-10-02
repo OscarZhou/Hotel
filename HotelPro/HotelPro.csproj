@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcPager">
+      <HintPath>..\..\..\..\..\..\迅雷下载\自定义分页实现\学员资料\Demo\Demo\bin\MvcPager.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -125,6 +128,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Common.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -218,7 +222,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\HotelAdmin\Models\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="UploadFile\" />
   </ItemGroup>
@@ -258,6 +261,7 @@
     <Content Include="Areas\HotelAdmin\Views\SysAdmin\AdminLogin.cshtml" />
     <Content Include="Areas\HotelAdmin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\HotelAdmin\Views\Dishes\DishesPublish.cshtml" />
+    <Content Include="Areas\HotelAdmin\Views\Dishes\DishesManage.cshtml" />
     <None Include="Properties\PublishProfiles\HotelPro.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Environment\Index.cshtml" />

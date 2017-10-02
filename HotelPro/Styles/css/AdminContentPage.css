@@ -23,3 +23,68 @@
 div.dish-item {
     margin-bottom: 10px;
 }
+
+select.droplist-dish {
+    background-color: #676D2D;
+    height: 28px;
+    margin-right: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    border-style: none;
+    width: 100px;
+    padding-left: 15px;
+}
+
+/*dish management*/
+
+div.dish-card {
+    width: 380px;
+    height: 150px;
+    border: 3px solid #ffffff;
+    padding: 10px 5px 10px 0px;
+    background-color: #ffffff;
+    float: left;
+    margin: 20px 30px 10px 50px;
+}
+
+div.dish-display {
+    float: left;
+    display: block;
+    margin-left: 10px;
+}
+
+img.dish-img {
+    width: 200px;
+    height: 130px;
+}
+
+
+div.dish-attr {
+    margin-top: 10px;
+}
+
+.dish-attr a {
+    color: #000;
+    margin-right: 15px;
+}
+
+
+/*pager*/
+div.pager {
+    clear: both;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin: 0px auto;
+
+}
+
+.pager a {
+    color: #fff;
+}
+
+.pager input {
+    width: 50px;
+    height: 20px;
+    margin-right: 10px;
+}
