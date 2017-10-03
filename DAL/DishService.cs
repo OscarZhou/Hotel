@@ -105,13 +105,14 @@ namespace DAL
         public int ModifyDish(Dish objDish)
         {
             string sql =
-                "UPDATE [dbo].[Dish] SET DishName = @DishName, UnitPrice = @UnitPrice, CategoryId = @CategoryId WHERE DishId = @DishId";
+                "UPDATE [dbo].[Dish] SET DishName = @DishName, UnitPrice = @UnitPrice, CategoryId = @CategoryId, DishImg=@DishImg WHERE DishId = @DishId";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@DishName", objDish.DishName),
                 new SqlParameter("@UnitPrice", objDish.UnitPrice), 
                 new SqlParameter("@CategoryId", objDish.CategoryId),
-                new SqlParameter("@DishId", objDish.DishId) 
+                new SqlParameter("@DishId", objDish.DishId),
+                new SqlParameter("@DishImg", objDish.DishImage) 
             };
 
             int result = SQLHelper.Update(sql, param);
@@ -143,7 +144,7 @@ namespace DAL
         /// <returns></returns>
         public Dish GetDish(string dishId)
         {
-            string sql = "SELECT DishId, DishName, UnitPrice, CategoryId FROM [dbo].[Dish] WHERE DishId = @DishId";
+            string sql = "SELECT DishId, DishName, UnitPrice, CategoryId, DishImg FROM [dbo].[Dish] WHERE DishId = @DishId";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@DishId", dishId)
@@ -156,7 +157,7 @@ namespace DAL
                 objDish = new Dish()
                 {
                     CategoryId = Convert.ToInt32(objReader["CategoryId"]),
-                    CategoryName = objReader["CategoryName"].ToString(),
+                    DishImage = objReader["DishImg"]!=null?objReader["DishImg"].ToString():"",
                     DishId = Convert.ToInt32(objReader["DishId"]),
                     DishName = objReader["DishName"].ToString(),
                     UnitPrice = Convert.ToDouble(objReader["UnitPrice"])

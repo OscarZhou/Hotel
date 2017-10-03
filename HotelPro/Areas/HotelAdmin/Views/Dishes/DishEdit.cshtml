@@ -1,48 +1,53 @@
 ﻿@using BLL
 @using Models
+@model Models.Dish
 
 @{
-    ViewBag.Title = "添加菜品";
+    ViewBag.Title = "编辑菜品";
     Layout = "~/Areas/HotelAdmin/Views/Shared/AdminLayout.cshtml";
 }
+
 <script src="~/Styles/js/validation-min.js"></script>
 <script src="~/Styles/js/uploadPreview.js"></script>
 
 <script type="text/javascript">
-    $(function() {
+    $(function () {
         $("#DishImage").uploadPreview({ Img: "imgHead", width: 302, height: 227 });
     });
-    
+
 </script>
 
 @{
     //下拉列表初始化
     List<DishCategory> objDishCategories = new DishManager().GetDishCategories();
     int categoryId = Convert.ToInt32(Request.QueryString["categoryId"]);
-    SelectList list = new SelectList(objDishCategories, "CategoryId","CategoryName",Request.QueryString["categoryId"]!=null?objDishCategories[categoryId-1].CategoryId:objDishCategories[0].CategoryId);
+    SelectList list = new SelectList(objDishCategories, "CategoryId", "CategoryName", Model.CategoryId);
 }
 
 <div class="add-dishes">
-    @using (Html.BeginForm("DoAddDish", "Dishes", FormMethod.Post, new{enctype="multipart/form-data", id="mainForm", name="mainForm"}))
+    @using (Html.BeginForm("DoDishModify", "Dishes", FormMethod.Post, new { enctype = "multipart/form-data", id = "mainForm", name = "mainForm" }))
     {
+        <div style="display:none">
+            <input type="text" name="DishId" class="dish-input" value="@Model.DishId"/>
+        </div>
         <div class="dish-item">
             菜品名称：
-            <input type="text" name="DishName" class="dish-input"/>
+            <input type="text" name="DishName" class="dish-input" value=@Model.DishName />
         </div>
-        <div class="dish-item">价格：<input type="text" name="UnitPrice" class="dish-input" /></div>
+        <div class="dish-item">价格：<input type="text" name="UnitPrice" class="dish-input" value=@Model.UnitPrice /></div>
         <div class="dish-item">
             菜品分类：
             @Html.DropDownList("CategoryId", list)
         </div>
         <div class="dish-item">
             菜品图片：<br />
-            <img id="imgHead" width="302" height="227" src="~/Images/default.png" />
+            <img id="imgHead" width="302" height="227" src="@Url.Content(String.Format("~/UploadFile/{0}", Model.DishImage))" />
         </div>
         <div class="dish-item">
             <input type="file" id="DishImage" name="DishImage" />
         </div>
         <div class="dish-item">
-            <input class="submit" type="submit" id="add" value="新增菜品" />
+            <input class="submit" type="submit" id="add" value="修改菜品" />
         </div>
     }
 </div>
@@ -51,11 +56,11 @@
 <script type="text/javascript">
     $("#mainForm").valid([
         { name: "dishName", isNull: "菜品名称不能为空", onFocus: "请填写菜品名称" },
-        { name: "dishPrice", type:"number", error:"菜品价格必须为整数", isNull: "价格不能为空", onFocus: "请填写菜品价格" }, true
+        { name: "dishPrice", type: "number", error: "菜品价格必须为整数", isNull: "价格不能为空", onFocus: "请填写菜品价格" }, true
     ]);
 
-    $(function() {
-        $("#add").click(function() {
+    $(function () {
+        $("#add").click(function () {
             $("#mainForm").submit();
         });
     });

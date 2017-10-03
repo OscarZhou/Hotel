@@ -276,6 +276,7 @@
     <Content Include="Areas\HotelAdmin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\HotelAdmin\Views\Dishes\DishesPublish.cshtml" />
     <Content Include="Areas\HotelAdmin\Views\Dishes\DishesManage.cshtml" />
+    <Content Include="Areas\HotelAdmin\Views\Dishes\DishEdit.cshtml" />
     <None Include="Properties\PublishProfiles\HotelPro.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Environment\Index.cshtml" />

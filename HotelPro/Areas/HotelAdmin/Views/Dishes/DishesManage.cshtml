@@ -49,8 +49,8 @@
                             菜品价格:￥@item.UnitPrice
                         </div>
                         <div class="dish-attr">
-                            <a href="/Dishes/DishesModify" id="dish-modify" >修改</a>
-                            <a href="/Dishes/DishesDelete" id="dish-delete" >删除</a>
+                            @Html.RouteLink("修改", new {controller = "Dishes", action = "ModifyDish", DishId = item.DishId})
+                            @Html.RouteLink("删除", new { controller= "Dishes", action="DeleteDish", DishId=item.DishId})
                         </div>
                     </div>
                 </div>
