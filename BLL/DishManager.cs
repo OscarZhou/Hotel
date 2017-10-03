@@ -29,9 +29,9 @@ namespace BLL
             return objDishService.ModifyDish(objDish);
         }
 
-        public int DeleteDish(Dish objDish)
+        public int DeleteDish(string DishId)
         {
-            return objDishService.DeleteDish(objDish);
+            return objDishService.DeleteDish(DishId);
         }
 
         public Dish GetDish(string dishId)

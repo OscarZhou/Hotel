@@ -125,12 +125,12 @@ namespace DAL
         /// </summary>
         /// <param name="objDish"></param>
         /// <returns></returns>
-        public int DeleteDish(Dish objDish)
+        public int DeleteDish(string DishId)
         {
             string sql = "DELETE FROM [dbo].[Dish] WHERE DishId = @DishId";
             SqlParameter[] param = new SqlParameter[]
             {
-                new SqlParameter("@DishId", objDish.DishId) 
+                new SqlParameter("@DishId", DishId) 
             };
 
             int result = SQLHelper.Update(sql, param);

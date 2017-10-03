@@ -165,7 +165,17 @@ namespace HotelPro.Areas.HotelAdmin.Controllers
 
         public ActionResult DeleteDish(string DishId)
         {
-            return View("DishesManage");
+            int ret = new DishManager().DeleteDish(DishId);
+            if (ret > 0)
+            {
+                return Content("<script>alert('删除成功');location.href='" + Url.Action("DoDishQuery") +
+                                       "'</script>");
+            }
+            else
+            {
+                return Content("<script>alert('删除失败');location.href='" + Url.Action("DoDishQuery") +
+                                       "'</script>");
+            }
         }
             
     }
