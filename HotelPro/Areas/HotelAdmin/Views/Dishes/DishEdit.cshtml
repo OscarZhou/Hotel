@@ -27,9 +27,8 @@
 <div class="add-dishes">
     @using (Html.BeginForm("DoDishModify", "Dishes", FormMethod.Post, new { enctype = "multipart/form-data", id = "mainForm", name = "mainForm" }))
     {
-        <div style="display:none">
-            <input type="text" name="DishId" class="dish-input" value="@Model.DishId"/>
-        </div>
+        
+        @Html.Hidden("DishId", @Model.DishId)
         <div class="dish-item">
             菜品名称：
             <input type="text" name="DishName" class="dish-input" value=@Model.DishName />

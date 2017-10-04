@@ -165,16 +165,21 @@ namespace HotelPro.Areas.HotelAdmin.Controllers
 
         public ActionResult DeleteDish(string DishId)
         {
+            Dish objDish = new DishManager().GetDish(DishId);
+            string filePath = Server.MapPath("~/UploadFile/" + objDish.DishImage);
             int ret = new DishManager().DeleteDish(DishId);
             if (ret > 0)
             {
-                return Content("<script>alert('删除成功');location.href='" + Url.Action("DoDishQuery") +
-                                       "'</script>");
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+                return Content("删除成功");
+                
             }
             else
             {
-                return Content("<script>alert('删除失败');location.href='" + Url.Action("DoDishQuery") +
-                                       "'</script>");
+                return Content("删除失败");
             }
         }
             

@@ -8,6 +8,24 @@
     ViewBag.Title = "菜单管理";
     Layout = "~/Areas/HotelAdmin/Views/Shared/AdminLayout.cshtml";
 }
+<script src="~/Styles/js/jquery-1.4.1.min.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $(".delDish").click(function() {
+            if (!confirm("确定删除?")) return;
+            var dishId = $(this).attr("name");
+            $.post("/Dishes/DeleteDish",
+                { DishId: dishId },
+                function(data, status) {
+                    if (status == "success") {
+                        $("#" + dishId).remove();
+                    }
+                });
+        });
+    })
+</script>
+
 
 @{
     //下拉框表初始化
@@ -33,7 +51,7 @@
         {
             foreach (var item in Model.Dishes)
             {
-                <div class="dish-card">
+                <div class="dish-card" id="@item.DishId">
                     <div class="dish-display">
                         <img class="dish-img" id="DishImage" src="@Url.Content(String.Format("~/UploadFile/{0}", item.DishImage))"/>
                         @*<img class="dish-img" id="DishImage" src="~/Images/default.png"/>*@
@@ -50,7 +68,8 @@
                         </div>
                         <div class="dish-attr">
                             @Html.RouteLink("修改", new {controller = "Dishes", action = "ModifyDish", DishId = item.DishId})
-                            @Html.RouteLink("删除", new { controller= "Dishes", action="DeleteDish", DishId=item.DishId})
+                            @*                            @Html.RouteLink("删除", new { controller= "Dishes", action="DeleteDish", DishId=item.DishId})*@
+                            <a href="javascript:void()" name="@item.DishId" class="delDish">删除</a>
                         </div>
                     </div>
                 </div>
